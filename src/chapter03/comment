@@ -1,0 +1,31 @@
+[vector]
+
+java1.2	이전△
+		이후▽
+
+[collection]	- List : 일정한 순서로 모여있음
+			- ArrayList : 사이즈가 증가할 때는 크기x2 배열을 생성한 뒤 자료를 옮김. 속도가 느리다. 삽입/삭제가 많지 않은 경우 사용. Indexing이기 때문에 검색이 빠름. vector에 되어있는 synchronize를 수동으로 처리해야 된다.
+			- LinkedList : 검색 시 처음부터 찾아야 되므로 속도가 느리다(최악 O(n)), 삽입/삭제 속도가 빠름.
+				- Queue extneds LinkedList
+			(- Vector : 내부는 ArrayList와 같다. 그러나 java thread가 같은 list에 접근 시 문제(multi-thread 환경에서 critical section 문제)가 생기므로 동기화가 필요한데, Vector는 synchronized 키워드로 자동으로 동기화가 되어 있다.)
+				- Stack extends Vector
+		- Set : 순서없이 모여있음/순회/중복x
+			- HashSet : 동기화x
+		- Map : key로 value가 나옴
+			- HashMap : 동기화x
+			- Hashtable : 동기화o
+			
+----------------------------------------------------------------------------------------------
+
+I/O Stream
+	file	=> program => byte, char
+	memory
+	...
+
+	read				write	
+[InputStream]		[OutputStream]
+FileInputStream		FileOutputStream
+										△Byte 단위
+										▽Character 단위
+[Reader]			[Writer]
+
