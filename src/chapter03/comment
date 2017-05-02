@@ -28,4 +28,10 @@ FileInputStream		FileOutputStream
 										△Byte 단위
 										▽Character 단위
 [Reader]			[Writer]
+FileInputStream		FileWriter
+	^
+FileReader
 
+
+file <-> 주 stream(1차 stream) <-> 보조 stream(2차, 3차 stream) 				<-> program
+		//FileInputStream		//InputStreamReader, BufferedStream
